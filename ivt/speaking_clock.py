@@ -2,6 +2,9 @@
 
 class SpeakingClock():
 
+    def __init__(self, audio_path):
+        self.audio_path = audio_path
+
     def get_current_time(self):
         raise NotImplementedError
 
@@ -21,5 +24,5 @@ def main():
     pass
 
 if __name__ == '__main__':
-    speaking_clock = SpeakingClock()
-    speaking_clock.run()
+    speaking_clock = SpeakingClock('../audio/British-Amy/')
+    # speaking_clock.run()
