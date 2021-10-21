@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
-test = ''
+from ivt.speaking_clock import SpeakingClock
 
-def main():
-    pass
-
-if __name__ == '__main__':
-    main()
+speaking_clock = SpeakingClock('audio/British-Amy/')
+speaking_clock.run()

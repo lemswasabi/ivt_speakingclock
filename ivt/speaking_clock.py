@@ -29,7 +29,7 @@ class SpeakingClock():
         if self.current_minute == self.tic:
             return
 
-        if self.current_minute == 30 or self.current_minute == 0
+        if self.current_minute == 30 or self.current_minute == 0:
             self.get_audio()
 
         self.tic = current_minute
