@@ -32,7 +32,7 @@ class SpeakingClock():
         if self.current_minute == 30 or self.current_minute == 0:
             self.get_audio()
 
-        self.tic = current_minute
+        self.tic = self.current_minute
 
     def get_audio(self):
         raise NotImplementedError
