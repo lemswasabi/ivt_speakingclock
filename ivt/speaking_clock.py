@@ -7,6 +7,12 @@ class SpeakingClock():
     def __init__(self, audio_path):
         self.audio_path = audio_path
 
+        current_time = self.get_current_time()
+        self.tic = current_time[1]
+
+        self.current_hour = None
+        self.current_minute = None
+
     def get_current_time(self):
         tz_Amsterdam = pytz.timezone("Europe/Amsterdam")
         dt_now = datetime.now(tz_Amsterdam)
@@ -15,13 +21,18 @@ class SpeakingClock():
         return hour, minute
 
     def check_speaking_time(self):
-        current_time = get_current_time()
-        if 22 < current_time[0] or 8 > current_time[0]:
-            return "Block audio"
-        elif current_time[1] == 30 or current_time[1] == 0:
-            return "Play Aduio"
-        else:
-            return "Nothing"
+        self.current_hour, self.current_minute = self.get_current_time()
+
+        if 22 < self.current_hour or 8 > self.current_hour:
+            return
+
+        if self.current_minute == self.tic:
+            return
+
+        if self.current_minute == 30 or self.current_minute == 0
+            self.get_audio()
+
+        self.tic = current_minute
 
     def get_audio(self):
         raise NotImplementedError
@@ -30,11 +41,9 @@ class SpeakingClock():
         raise NotImplementedError
 
     def run(self):
-        raise NotImplementedError
-
-def main():
-    pass
+        while True:
+            self.check_speaking_time()
 
 if __name__ == '__main__':
     speaking_clock = SpeakingClock('../audio/British-Amy/')
-    # speaking_clock.run()
+    speaking_clock.run()
