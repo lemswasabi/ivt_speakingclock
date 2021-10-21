@@ -2,23 +2,24 @@
 
 class SpeakingClock():
 
-    def get_current_time():
+    def get_current_time(self):
         raise NotImplementedError
 
-    def check_speaking_time():
+    def check_speaking_time(self):
         raise NotImplementedError
 
-    def get_audio():
+    def get_audio(self):
         raise NotImplementedError
 
-    def display():
+    def display(self):
         raise NotImplementedError
 
-    def main_loop():
+    def run(self):
         raise NotImplementedError
 
 def main():
     pass
 
 if __name__ == '__main__':
-    main()
+    speaking_clock = SpeakingClock()
+    speaking_clock.run()
