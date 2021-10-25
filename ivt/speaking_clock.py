@@ -41,20 +41,18 @@ class SpeakingClock():
         self.tic = self.current_minute
 
     def get_hour_key(self, oclock=False):
+        hour_key = self.current_hour
+
+        if hour_key > 12:
+            hour_key -= 12
+
+        if hour_key == 0:
+            hour_key += 12
+
         if oclock:
-            hour_key = self.current_hour - 1
+            hour_key += 60
 
-            if self.current_hour > 12:
-                hour_key = hour_key - 12
-
-            return 60 + hour_key
-        else:
-            hour_key = self.current_hour
-
-            if self.current_hour > 12:
-                hour_key = hour_key - 12
-
-            return hour_key
+        return hour_key
 
     def get_audio_keys(self):
         # 73 = 'it is'
@@ -80,6 +78,7 @@ class SpeakingClock():
 
             # 76 = 'quarter to'
             look_up_keys.append(76)
+            self.current_hour += 1
             look_up_keys.append(self.get_hour_key())
 
         else:
@@ -124,4 +123,3 @@ class SpeakingClock():
 if __name__ == '__main__':
     speaking_clock = SpeakingClock('../audio/British-Amy/', 'audio_map.csv', notebook=True)
     speaking_clock.tell_current_time()
-    # speaking_clock.run()
