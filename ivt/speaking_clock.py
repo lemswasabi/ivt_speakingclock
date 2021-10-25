@@ -84,7 +84,6 @@ class SpeakingClock():
 
         else:
             look_up_keys.append(self.get_hour_key())
-            print(self.current_minute)
             if self.current_minute // 10 == 0:
                 look_up_keys.append(0)
             look_up_keys.append(self.current_minute)
@@ -105,6 +104,7 @@ class SpeakingClock():
         if hour != None and minute != None:
             self.current_hour = hour
             self.current_minute = minute
+
         self.get_audio()
         file_path = os.path.join(self.audio_path, 'tmp.mp3')
         os.system(f'mpg123 -q {file_path}')
@@ -112,8 +112,6 @@ class SpeakingClock():
 
     def tell_current_time(self):
         self.current_hour, self.current_minute = self.get_current_time()
-        # self.current_hour, self.current_minute = 16, 7
-        print(self.current_hour, self.current_minute)
         self.tell_time()
 
     def display(self):
