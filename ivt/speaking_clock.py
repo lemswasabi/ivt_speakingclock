@@ -6,6 +6,7 @@ import pandas as pd
 
 from datetime import datetime
 from pydub import AudioSegment
+from playsound import playsound
 
 class SpeakingClock():
 
@@ -106,7 +107,7 @@ class SpeakingClock():
 
         self.get_audio()
         file_path = os.path.join(self.audio_path, 'tmp.mp3')
-        os.system(f'mpg123 -q {file_path}')
+        playsound(file_path)
         os.remove(file_path)
 
     def tell_current_time(self):
