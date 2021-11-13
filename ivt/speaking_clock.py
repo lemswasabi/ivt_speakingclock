@@ -14,8 +14,8 @@ class SpeakingClock():
         self.audio_path = audio_path
         self.audio_map = pd.read_csv(os.path.join(self.audio_path, audio_map))
 
-        current_time = self.get_current_time()
-        self.tic = current_time[1]
+        self.current_time = self.get_current_time()
+        self.tic = self.current_time[1]
 
         self.current_hour = None
         self.current_minute = None
@@ -114,13 +114,10 @@ class SpeakingClock():
         self.current_hour, self.current_minute = self.get_current_time()
         self.tell_time()
 
-    def display(self):
-        raise NotImplementedError
-
     def run(self):
         while True:
             self.check_speaking_time()
 
 if __name__ == '__main__':
-    speaking_clock = SpeakingClock('../audio/British-Amy/', 'audio_map.csv', notebook=True)
+    speaking_clock = SpeakingClock('../audio/Japanglish/', 'audio_map.csv', notebook=True)
     speaking_clock.tell_current_time()
