@@ -3,5 +3,4 @@
 from ivt.speaking_clock import SpeakingClock
 
 speaking_clock = SpeakingClock('audio/British-Amy/', 'audio_map.csv', notebook=False)
-# speaking_clock.tell_current_time()
 speaking_clock.run()

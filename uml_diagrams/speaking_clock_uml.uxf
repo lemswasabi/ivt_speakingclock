@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>12</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>372</x>
+      <y>36</y>
+      <w>300</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;SpeakingClock&gt;&gt;
+--
++ audio_path: String
++ audio_map: DataFrame
++ current_time: (Integer, Integer)
++ tic: Integer
++ current_hour: Integer
++ current_minute: Integer
+--
++ get_current_time()
++ check_speaking_time()
++ get_hour_key()
++ get_audi_keys()
++ get_audio()
++ tell_time()
++ tell_current_time()
++ run()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>912</x>
+      <y>36</y>
+      <w>528</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;rootUI&gt;&gt;
+tkinter::Tk
+--
++ Button(root, command=SpeakingClock.tell_current_time())
++ mainloop()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>60</y>
+      <w>276</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=0..1</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;10.0</additional_attributes>
+  </element>
+</diagram>
