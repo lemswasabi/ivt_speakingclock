@@ -16,7 +16,7 @@ python main.py
 ## Work contribution
 We divided our works fairly. However, since Leminh has a CS background he took a lead role in the development process. Tatsu instead took a lead role in the presentation.
 
-- Leminh  Designed the speaking clock structure and set up github for the collaboration. Wrote a code to make speaking clock works and helped Tatsu out for github usage. 
+- Leminh: Designed the speaking clock structure and set up github for the collaboration. Wrote a code to make speaking clock works and helped Tatsu out for github usage. 
 
-- Tatsu  Recorded speech and wrote a code to make speaking clock works by following the program structure and github collaboration rules. Structurized presentaton and made slides.
+- Tatsu: Recorded speech and wrote a code to make speaking clock works by following the program structure and github collaboration rules. Structurized presentaton and made slides.
 
