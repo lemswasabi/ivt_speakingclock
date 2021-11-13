@@ -3,7 +3,7 @@
 from tkinter import *
 from ivt.speaking_clock import SpeakingClock
 
-speaking_clock = SpeakingClock('audio/', 'audio_map.csv', notebook=False)
+speaking_clock = SpeakingClock('audio/Japanglish', 'audio_map.csv', notebook=False)
 
 root = Tk()
 
