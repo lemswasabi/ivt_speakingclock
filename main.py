@@ -33,7 +33,7 @@ button6.grid(row=2,column=2, padx=(50, 50), pady=(50, 50))
 button6 = Button(root, text="say 20:45", command=lambda: speaking_clock.tell_time(20, 45))
 button6.grid(row=2,column=3, padx=(50, 50), pady=(50, 50))
 
-button6 = Button(root, text="say 11:45", command=lambda: speaking_clock.tell_time(11, 45))
+button6 = Button(root, text="say 11:17", command=lambda: speaking_clock.tell_time(11, 17))
 button6.grid(row=3,column=0, padx=(50, 50), pady=(50, 50))
 
 button6 = Button(root, text="say 12:45", command=lambda: speaking_clock.tell_time(12, 45))
